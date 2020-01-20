@@ -42,9 +42,9 @@ cleanStart: force
 
 INSTALL_PATH?=z.LOCAL
 
-install: src bin
+install: src # bin
 	mkdir -p $(INSTALL_PATH)/bin $(INSTALL_PATH)/lib/rai $(INSTALL_PATH)/include/rai
-	cp bin/src_kinEdit/x.exe $(INSTALL_PATH)/bin/kinEdit
+	# cp bin/src_kinEdit/x.exe $(INSTALL_PATH)/bin/kinEdit
 	cp lib/lib*.so $(INSTALL_PATH)/lib/rai
 	@echo "copying headers into $(INSTALL_PATH)/include/rai"
 	@eval $(shell cd rai; find . -maxdepth 1 -type d -printf "mkdir -p $(INSTALL_PATH)/include/rai/%f\; ")
